@@ -1,0 +1,47 @@
+@model lab_2_3.Models.GuestResponse
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <style type="text/css">
+        body {
+            background-image: url("https://i.postimg.cc/YSBJ5bD6/happy-chinese-new-year-background-with-chinese-lanterns-and-ornament-happy-new-year-backdrop-for-pos.jpg");
+            background-repeat: no-repeat;
+            font-family: 'Monomaniac One', cursive;
+            font-size: 20px;
+            font-weight: 400;
+        }
+
+        .box {
+            color: white;
+            text-align: center;
+            margin-top: 15%;
+            margin-left: 38%;
+        }
+
+        a {
+            color: white;
+        }
+    </style>
+    <meta name="viewport" content="width=device-width" />
+    <title>Thanks</title>
+</head>
+    <body>
+        <div class="box">
+            <p>
+                <span><h1>Thank you, @Model.Name!</h1></span>
+                @if (Model.WillAttend == true)
+        {
+                @:It's great that you're coming. The drinks are already in the fridge!
+        }
+        else
+        {
+                @:Sorry to hear that you can't make it, but thanks for letting us know.
+        }
+            </p>
+            <p>Click <a asp-action="ListResponses"><b>here</b></a> to see who is coming.</p>
+        </div>
+    </body>
+</html>

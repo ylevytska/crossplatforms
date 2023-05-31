@@ -1,0 +1,86 @@
+﻿@model lab_2_3.Models.GuestResponse
+
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <style type="text/css">
+        body {
+            background-image: url("https://i.postimg.cc/zDpkq99p/happy-chinese-new-year-background-with-chinese-lanterns-and-ornament-happy-new-year-backdrop-for-pos.jpg");
+            background-repeat: no-repeat;
+            font-family: 'Monomaniac One', cursive;
+            font-size: 20px;
+            font-weight: 400;
+        }
+
+        .box {
+            text-align: center;
+            margin-top: 20%;
+        }
+
+        span {
+            color: #FFFAF4;
+        }
+
+        input[type=text] {
+            padding-left: 5px;
+            font-family: 'Monomaniac One', cursive;
+            font-size: 16px;
+            font-weight: 400;
+            border-radius: 15px;
+        }
+
+        .selectStyle {
+            font-family: 'Monomaniac One';
+            font-size: 16px;
+            font-weight: 200;
+            border-radius: 15px;
+        }
+
+        button[type=submit] {
+            font-family: 'Monomaniac One', cursive;
+            font-size: 16px;
+            font-weight: 400;
+            width: 120px;
+            height: 35px;
+            border-radius: 15px;
+        }
+
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Monomaniac+One&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width" />
+    <title>RsvpForm</title>
+</head>
+    <body>
+        <div class="box">
+            <form asp-action="RsvpForm" method="post">
+                <p>
+                    <label asp-for="Name"><span>Your name:</span></label>
+                    <input type="text" asp-for="Name" />
+                </p>
+                <p>
+                    <label asp-for="Email"><span>Your email:</span></label>
+                    <input class="inputStyle" asp-for="Email" />
+                </p>
+                <p>
+                    <label asp-for="Phone"><span>Your phone:</span></label>
+                    <input class="inputStyle" asp-for="Phone" />
+                </p>
+                <p>
+                    <label><span>Will you attend?</span></label>
+                    <select class="selectStyle" asp-for="WillAttend">
+                        <option value="">Choose an option</option>
+                        <option value="true">Yes, I'll be there</option>
+                        <option value="false">No, I can't come</option>
+                    </select>
+                </p>
+                <button type="submit">Submit RSVP</button>
+            </form>
+        </div>
+        
+    </body>
+</html>
